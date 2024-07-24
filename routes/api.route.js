@@ -26,7 +26,7 @@ const documentSchema = new mongoose.Schema({
   },
 });
 
-const Document = mongoose.model("Document", documentSchema);
+const Document = mongoose.model("event", documentSchema);
 
 apiRouter.get("/", (req, res) => {
   res.status(200).json({ message: "game" });
