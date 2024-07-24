@@ -1,4 +1,5 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 
 const apiRouter = require('../routes/api.route');
 
@@ -12,6 +13,8 @@ const socketIo = require('socket.io')(http, {
     origin: '*',
   },
 });
+
+app.use(bodyParser.json());
 
 require('../socket/socket')(socketIo);
 

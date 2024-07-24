@@ -11,8 +11,7 @@ mongoose.Promise = global.Promise;
 mongoose.set('strictQuery', false);
 
 mongoose.connect(
-  process.env.DATABASE_URL + process.env.DATABASE_NAME,
-  databaseOptions
+  process.env.DATABASE_URL + process.env.DATABASE_NAME
 );
 
 db.on('open', () => {
