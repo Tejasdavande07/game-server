@@ -2,11 +2,6 @@ const mongoose = require('mongoose');
 
 const db = mongoose.connection;
 
-const databaseOptions = {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-};
-
 mongoose.Promise = global.Promise;
 mongoose.set('strictQuery', false);
 
