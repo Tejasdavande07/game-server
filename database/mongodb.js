@@ -9,7 +9,7 @@ const databaseOptions = {
 };
 
 mongoose.Promise = global.Promise;
-mongoose.set('strictQuery', true);
+mongoose.set('strictQuery', false);
 
 mongoose.connect(
   process.env.DATABASE_URL + process.env.DATABASE_NAME,
