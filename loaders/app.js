@@ -8,7 +8,6 @@ require('../database/mongodb');
 const app = express();
 const http = require('http').createServer(app);
 const socketIo = require('socket.io')(http, {
-  transports: ['websocket'],
   cors: {
     origin: '*',
   },
@@ -19,7 +18,6 @@ app.use(bodyParser.json());
 require('../socket/socket')(socketIo);
 
 app.set('socketIo', socketIo);
-
 
 app.use(express.urlencoded({ extended: true }));
 
@@ -70,4 +68,9 @@ app.use(function (err, req, res, next) {
   }
   res.status(status).json({ message: displayMsg });
 });
-module.exports = http;
+
+module.exports = {
+  http,
+  app
+};
+
