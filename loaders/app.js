@@ -1,8 +1,5 @@
 const express = require('express');
 
-
-
-
 const apiRouter = require('../routes/api.route');
 
 require('../database/mongodb');
@@ -21,33 +18,8 @@ require('../socket/socket')(socketIo);
 app.set('socketIo', socketIo);
 
 
-
-
-
-
 app.use(express.urlencoded({ extended: true }));
 
-//#region <Process Error handling>
-if (!CL_ARGS.has('show-error-stack')) {
-  process.on('uncaughtException', (err) => {
-    console.error(
-      'UNCAUGHT EXCEPTION! Shutting down...',
-      err.name,
-      err.message
-    );
-    process.exit(1);
-  });
-
-  process.on('unhandledRejection', (err) => {
-    console.error(
-      'UNHANDLED REJECTION! Shutting down...',
-      err.name,
-      err.message
-    );
-    process.exit(1);
-  });
-}
-//#endregion
 
 //#region <API Router>
 app.use(apiRouter);

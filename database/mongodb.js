@@ -4,7 +4,6 @@ const db = mongoose.connection;
 
 const databaseOptions = {
   useNewUrlParser: true,
-  keepAlive: true,
   useUnifiedTopology: true,
 };
 
